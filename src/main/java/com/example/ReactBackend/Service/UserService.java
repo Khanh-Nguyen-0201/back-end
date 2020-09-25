@@ -56,12 +56,6 @@ public class UserService {
         existingUser.setFirstName(user.getFirstName());
         existingUser.setLastName(user.getLastName());
         existingUser.setEmail(user.getEmail());
-//        Set<Project> projects = new HashSet<>();
-//        for(ProjectTO p: user.getProjects()){
-//            p.setUser(user);
-//            projects.add(ProjectService.createProjectEntity(p));
-//        }
-//        existingUser.setProjects(projects);
         existingUser = repository.save(existingUser);
         return createUserTO(existingUser);
 
@@ -75,7 +69,6 @@ public class UserService {
         userEntity.setLastName(userTO.getLastName());
         userEntity.setEmail(userTO.getEmail());
         userEntity.setPassword(userTO.getPassword());
-        //userEntity.setMemberSince(userTO.getMemberSince());
         return userEntity;
     }
 
@@ -92,14 +85,6 @@ public class UserService {
             userTO.setMemberSince(dateFormat.format(memberSince));
             userTO.setPassword(userEntity.getPassword());
             userTO.setUserID(userEntity.getUserID());
-//            List<ProjectTO> listOfUserProjects = new ArrayList<>();
-//            for (Project p : userEntity.getProjects()) {
-//                ProjectTO projectTO = new ProjectTO();
-//                projectTO.setProjectName(p.getProjectName());
-//                projectTO.setProjectCode(p.getProjectCode());
-//                listOfUserProjects.add(projectTO);
-//            }
-//            userTO.setProjects(listOfUserProjects);
         }
         return userTO;
     }

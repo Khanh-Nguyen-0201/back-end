@@ -24,7 +24,6 @@ public class ProductTO {
     private String type;
     private String image;
 
-//    private UserTO user;
 
     public int getProductID() {
         return productID;
@@ -169,14 +168,6 @@ public class ProductTO {
     public void setImage(String image) {
         this.image = image;
     }
-    //    public UserTO getUser() {
-//        return user;
-//    }
-//
-//    public void setUser(UserTO user) {
-//        this.user = user;
-//    }
-
 
     @Override
     public String toString() {

@@ -71,14 +71,6 @@ public class UserTO {
         this.memberSince = memberSince;
     }
 
-//    public List<ProductTO> getProducts() {
-//        return products;
-//    }
-//
-//    public void setProducts(List<ProductTO> products) {
-//        this.products = products;
-//    }
-
     @Override
     public String toString() {
         return "UserTO{" +
@@ -104,7 +96,6 @@ public class UserTO {
                 Objects.equals(getLastName(), userTO.getLastName()) &&
                 Objects.equals(getEmail(), userTO.getEmail()) &&
                 Objects.equals(getMemberSince(), userTO.getMemberSince());
-                //Objects.equals(getProducts(), userTO.getProducts());
     }
 
     @Override

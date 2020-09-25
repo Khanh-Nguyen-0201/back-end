@@ -17,8 +17,6 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-//    @Autowired
-//    private UserRepository userRepository;
 
     public List<ProductTO> getProducts() {
         List<ProductTO> productsToReturn = new ArrayList<>();
@@ -37,16 +35,9 @@ public class ProductService {
     }
 
     public String deleteProduct(int productID){
-//        if(productRepository.existsById(productID)) {
-//            Product productToDelete = productRepository.findById(productID).orElse(null);
-//            User userOfProduct = productToDelete.getUser();
-//            userOfProduct.getProducts().remove(productToDelete);
-//            userRepository.save(userOfProduct);
             productRepository.deleteById(productID);
             return "Product removed: " + productID;
-//        }else{
-//            return "No Product to delete by id: "+ productID;
-//        }
+
     }
 
     public ProductTO updateProduct(ProductTO product){
@@ -71,7 +62,6 @@ public class ProductService {
             existingProduct.setPrice(product.getPrice());
             existingProduct.setType(product.getType());
             existingProduct.setImage(product.getImage());
-//            existingProduct.setUser(UserService.createUserEntity(product.getUser()));
             existingProduct = productRepository.save(existingProduct);
             return createProductTO(existingProduct);
         }
@@ -87,8 +77,6 @@ public class ProductService {
     public static Product createProductEntity(ProductTO productTO){
         Product productEntity = new Product();
         productEntity.setProductName(productTO.getProductName());
-//        if(productTO.getUser() != null)
-//            productEntity.setUser(UserService.createUserEntity(productTO.getUser()));
         productEntity.setProductID(productTO.getProductID());
         productEntity.setBrand(productTO.getBrand());
         productEntity.setAirflow(productTO.getAirflow());
@@ -126,7 +114,6 @@ public class ProductService {
         productTO.setPrice(productEntity.getPrice());
         productTO.setType(productEntity.getType());
         productTO.setImage(productEntity.getImage());
-        //productTO.setUser(UserService.createUserTO(productEntity.getUser()));
         return productTO;
     }
 }

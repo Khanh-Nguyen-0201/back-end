@@ -65,11 +65,6 @@ public class Product {
 
 
 
-//    @ManyToOne(targetEntity = User.class, cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
-//    @JoinColumn(name="UserProduct_FK", nullable = false,referencedColumnName ="userID")
-//    private User user;
-
-
     public int getProductID() {
         return productID;
     }
@@ -213,13 +208,5 @@ public class Product {
     public void setImage(String image) {
         this.image = image;
     }
-    //    public User getUser() {
-//        if(this.user != null)
-//            this.user.setProducts(new HashSet<>());
-//        return this.user;
-//    }
-//
-//    public void setUser(User user) {
-//        this.user = user;
-//    }
+
 }

@@ -26,8 +26,7 @@ public class UserController {
         if(user.getUsername().equals(service.getByUserName(user.getUsername()))){
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
-        user.setPassword(bcryptEncoder.encode(user.getPassword()));
-//        user.setMemberSince(Calendar.getInstance().getTime());
+        user.setPassword(bcryptEncoder.encode(user.getPassword()));;
         System.out.println(user);
         return new ResponseEntity<>(service.saveUser(user),HttpStatus.CREATED);
     }
